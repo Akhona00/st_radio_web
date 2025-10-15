@@ -13,7 +13,7 @@
     --text-primary: #ffffff;
     --text-secondary: #cbd5e1;
     --gradient: linear-gradient(135deg, #f37704 0%, #dd2f10 50%, #e8ce09 100%);
-    --gradient-reverse: linear-gradient(135deg, #099ee8 0%, #161515 50%, #046cf3 100%);
+    --gradient-reverse: linear-gradient(135deg, #27292a 0%, #161515 50%, #0b0b0b 100%);
 }
 
 body {
@@ -105,14 +105,14 @@ nav ul li a:hover::after {
     padding: 8rem 5% 4rem;
     max-width: 1400px;
     margin: 0 auto;
-    background: var(--gradient);
+    background: var(--gradient-reverse);
 }
 
 .about-section h2 {
     font-size: clamp(2rem, 6vw, 3rem);
     margin-bottom: 2rem;
     text-align: center;
-    color: white;
+    color: var(--secondary-color);
     animation: fadeInDown 1s ease-out;
 }
 
@@ -169,6 +169,7 @@ nav ul li a:hover::after {
     padding: 4rem 5%;
     max-width: 1400px;
     margin: 0 auto;
+    background-color: #0b0b0b;
 }
 
 .card {
@@ -311,7 +312,7 @@ nav ul li a:hover::after {
     font-size: clamp(2rem, 6vw, 3rem);
     text-align: center;
     margin-bottom: 3rem;
-    background: var(--gradient);
+    background: var(--secondary-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -360,14 +361,14 @@ nav ul li a:hover::after {
     font-size: clamp(1.8rem, 5vw, 2.2rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
-    background: var(--gradient);
+    background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .leader-title {
-    color: var(--accent-color);
+    color: white;
     font-size: clamp(1.1rem, 3vw, 1.3rem);
     font-weight: 600;
     margin-bottom: 1rem;
@@ -375,13 +376,13 @@ nav ul li a:hover::after {
 }
 
 .leader-desc {
-    color: var(--accent-color);
+    color: white;
     font-size: clamp(1rem, 2.5vw, 1.1rem);
     line-height: 1.8;
 }
 
 footer {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    background:var(--gradient-reverse);
     padding: 3rem 5% 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
@@ -442,7 +443,7 @@ footer > div:nth-child(3) {
 footer h4 {
     font-size: clamp(1.1rem, 3vw, 1.3rem);
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: var(--secondary-color);
 }
 
 footer ul {
