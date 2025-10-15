@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | ThabaneST Media</title>
+  <link rel="stylesheet" href="service.css" />
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+  <nav>
+    <div>ThabaneST <span>Media</span></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html" class="active">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- 3D Service Carousel -->
+  <div class="banner">
+    <div class="slider" style="--quantity: 8">
+      <div class="item" style="--position:1" data-service="graphic">
+        <img src="graphic_design.png" alt="Graphic Design" />
+        <div class="service-tooltip">Graphic Design</div>
+      </div>
+      <div class="item" style="--position:2" data-service="broadcasting">
+        <img src="broadcasting.png" alt="Broadcasting" />
+        <div class="service-tooltip">Broadcasting</div>
+      </div>
+      <div class="item" style="--position:3" data-service="photography">
+        <img src="phography.png" alt="Photography" />
+        <div class="service-tooltip">Photography</div>
+      </div>
+      <div class="item" style="--position:4" data-service="audio">
+        <img src="Audio_Visual_Production.png" alt="Audio Visual Production" />
+        <div class="service-tooltip">Audio Visual Production</div>
+      </div>
+      <div class="item" style="--position:5" data-service="multicam">
+        <img src="ModernRecordingStudio.png" alt="Multicam & Live Streaming" />
+        <div class="service-tooltip">Multicam & Live Streaming</div>
+      </div>
+      <div class="item" style="--position:6" data-service="videography">
+        <img src="Professional_Cinema_Camera.png" alt="Videography" />
+        <div class="service-tooltip">Videography</div>
+      </div>
+      <div class="item" style="--position:7" data-service="event">
+        <img src="Event_Management.png" alt="Event Management" />
+        <div class="service-tooltip">Event Management</div>
+      </div>
+      <div class="item" style="--position:8" data-service="music">
+        <img src="Multicam&Live_Streaming.png" alt="Music Production" />
+        <div class="service-tooltip">Music Production</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="service-info" id="serviceInfo">
+    <button class="close-info" onclick="closeServiceInfo()">&times;</button>
+    <div id="serviceContent"></div>
+  </div>
+
+
+  <footer>
+    <div class="ft-logo">
+      <img src="st_logo.jpg" alt="ThabaneST Media Logo" />
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="socials">
+      <h4>Socials</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/thabanistmedia"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="https://www.tiktok.com/thabanistmedia"><ion-icon name="logo-tiktok"></ion-icon></a></li>
+        <li><a href="https://www.youtube.com/thabanistmedia"><ion-icon name="logo-youtube"></ion-icon></a></li>
+      </ul>
+    </div>
+    <div class="copyright">All rights reserved &copy; 2023</div>
+  </footer>
+
+  <script>
+    const serviceData = {
+      graphic: {
+        title: "Graphic Design",
+        description: "High-quality designs that elevate your brand.",
+        features: ["Logo Design", "Flyers", "Brochures", "Brand Profiles"]
+      },
+      broadcasting: {
+        title: "Broadcasting",
+        description: "Professional live and recorded broadcasts.",
+        features: ["Talk Shows", "Podcasts", "Online Radio", "Online TV"]
+      },
+      photography: {
+        title: "Photography",
+        description: "Capturing your best moments in stunning quality.",
+        features: ["Corporate", "Events", "Portraits", "Sports"]
+      },
+      audio: {
+        title: "Audio Visual Production",
+        description: "Creative video and audio solutions.",
+        features: ["Virtual Events", "Concerts", "Music", "Corporate Videos"]
+      },
+      multicam: {
+        title: "Multicam & Live Streaming",
+        description: "Seamless multi-camera live production.",
+        features: ["Live Events", "Webinars", "Streaming", "Podcasts"]
+      },
+      videography: {
+        title: "Videography",
+        description: "Professional video production for all needs.",
+        features: ["Corporate", "Promotional", "Music Videos", "Events"]
+      },
+      event: {
+        title: "Event Management",
+        description: "We plan, manage, and execute flawless events.",
+        features: ["Weddings", "Corporate", "Awards", "Launches"]
+      },
+      music: {
+        title: "Music Production",
+        description: "Producing top-quality music across genres.",
+        features: ["Gospel", "Amapiano", "Hip-hop", "House"]
+      }
+    };
+
+    document.querySelectorAll('.item[data-service]').forEach(item => {
+      item.addEventListener('click', () => showServiceInfo(item.dataset.service));
+    });
+
+    function showServiceInfo(service) {
+      const info = serviceData[service];
+      if (!info) return;
+      const content = document.getElementById('serviceContent');
+      content.innerHTML = `
+        <h3>${info.title}</h3>
+        <p>${info.description}</p>
+        <ul>${info.features.map(f => `<li>${f}</li>`).join('')}</ul>
+      `;
+      document.getElementById('serviceInfo').classList.add('active');
+    }
+
+    function closeServiceInfo() {
+      document.getElementById('serviceInfo').classList.remove('active');
+    }
+
+    function toggleMenu() {
+      document.querySelector('nav ul').classList.toggle('active');
+      document.querySelector('.toggle').classList.toggle('active');
+    }
+
+
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('nav ul').classList.remove('active');
+        document.querySelector('.toggle').classList.remove('active');
+      });
+    });
+
+  
+    document.addEventListener('click', (e) => {
+      const serviceInfo = document.getElementById('serviceInfo');
+      if (serviceInfo.classList.contains('active') && 
+          !serviceInfo.contains(e.target) && 
+          !e.target.closest('.item')) {
+        closeServiceInfo();
+      }
+    });
+  </script>
+</body>
+</html>
