@@ -143,7 +143,7 @@ nav ul li a:hover::after {
     height: auto;
     object-fit: contain;
     animation: float 3s ease-in-out infinite;
-    filter: drop-shadow(0 10px 30px rgba(99, 102, 241, 0.5));
+    filter: drop-shadow(0 10px 30px rgba(245, 120, 11, 0.5));
 }
 
  @keyframes float {
@@ -345,8 +345,8 @@ nav ul li a:hover::after {
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
-    border-color: rgba(99, 102, 241, 0.5);
+    box-shadow: 0 20px 40px rgba(216, 150, 79, 0.3);
+    border-color: rgba(241, 145, 9, 0.5);
 }
 
 .service-card img {
