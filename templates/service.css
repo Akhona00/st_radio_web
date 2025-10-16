@@ -146,7 +146,7 @@ nav ul li a.active::after {
   position: absolute;
   inset: 0;
   transform: rotateY(calc((var(--position) - 1) * (360 / 8) * 1deg))
-    translateZ(clamp(180px, 40vw, 550px));
+    translateZ(clamp(150px, 30vw, 300px));
   cursor: pointer;
 }
 
